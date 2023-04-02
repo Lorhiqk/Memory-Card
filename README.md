@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
         QPushButton, QLabel)
 from random import randint, shuffle 
 
+Импортим необходимые функции
 
 class Question():
     ''' содержит вопрос, правильный ответ и три неправильных'''
@@ -16,6 +17,7 @@ class Question():
         self.wrong2 = wrong2
         self.wrong3 = wrong3
 
+Создаем класс вопроса. В котором прописываем три неправильных ответа и один правильный, ну и сам вопрос
 
 questions_list = [] 
 questions_list.append(
@@ -25,6 +27,7 @@ questions_list.append(
 questions_list.append(
         Question('Национальная хижина якутов', 'Ураса', 'Юрта', 'Иглу', 'Хата'))
 
+Создаем лист в котором три вопроса и ответы для них
 
 app = QApplication([])
 
@@ -32,6 +35,7 @@ app = QApplication([])
 btn_OK = QPushButton('Ответить') # кнопка ответа
 lb_Question = QLabel('Самый сложный вопрос в мире!') # текст вопроса
 
+прописываем переменные для последующих кнопок и текстов вопросов 
 
 RadioGroupBox = QGroupBox("Варианты ответов") # группа на экране для переключателей с ответами
 
@@ -41,13 +45,15 @@ rbtn_2 = QRadioButton('Вариант 2')
 rbtn_3 = QRadioButton('Вариант 3')
 rbtn_4 = QRadioButton('Вариант 4')
 
+Создаем группу с вариантами ответов.
 
-RadioGroup = QButtonGroup() # это для группировки переключателей, чтобы управлять их поведением
+RadioGroup = QButtonGroup() # 
 RadioGroup.addButton(rbtn_1)
 RadioGroup.addButton(rbtn_2)
 RadioGroup.addButton(rbtn_3)
 RadioGroup.addButton(rbtn_4)
 
+это для группировки переключателей, чтобы управлять их поведением
 
 layout_ans1 = QHBoxLayout()   
 layout_ans2 = QVBoxLayout() # вертикальные будут внутри горизонтального
